@@ -1,26 +1,38 @@
-/.devcontainer/
-/builds/
-/exportToHTML/
-/Labs/Lab5/build
-
-# Игнорировать файлы и папки, создаваемые CMake
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-
-# Игнорировать файлы, создаваемые компилятором
-*.o
-*.obj
-*.exe
-*.out
-*.app
-
-# Игнорировать файлы, создаваемые IDE
-.vscode/
+# Игнорировать файлы и директории IDE
 .idea/
-.cache
-*.user
+*.iml
+*.ipr
+*.iws
 
-# Игнорировать временные файлы
-*~
+# Игнорировать файлы macOS
+.DS_Store
+
+# Игнорировать директорию сборки CMake
+cmake-build-debug/
+cmake-build-release/
+
+# Игнорировать скомпилированные бинарные файлы
+child1
+child2
+parent
+
+# Игнорировать временные файлы и логи
+*.log
+*.tmp
 *.swp
+*.swo
+
+# Игнорировать документацию и другие ненужные файлы
+doc/
+*.doc
+*.pdf
+protocol.txt
+starce.txt
+
+# Игнорировать системные файлы
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Игнорировать пользовательские настройки
+.vscode/
