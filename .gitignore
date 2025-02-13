@@ -11,23 +11,11 @@
 cmake-build-debug/
 cmake-build-release/
 
-# Игнорировать скомпилированные бинарные файлы
-child1
-child2
-parent
-
 # Игнорировать временные файлы и логи
 *.log
 *.tmp
 *.swp
 *.swo
-
-# Игнорировать документацию и другие ненужные файлы
-doc/
-*.doc
-*.pdf
-protocol.txt
-starce.txt
 
 # Игнорировать системные файлы
 Thumbs.db
