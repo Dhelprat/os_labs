@@ -1,0 +1,3 @@
+/Users/dhelprat/Documents/os-labs/cmake-build-debug/CMakeFiles/os_labs.dir
+/Users/dhelprat/Documents/os-labs/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/dhelprat/Documents/os-labs/cmake-build-debug/CMakeFiles/rebuild_cache.dir

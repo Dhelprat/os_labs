@@ -1,0 +1,280 @@
+$ strace -f ./parent
+execve("./parent", ["./parent"], 0x7fffe4680218 /* 32 vars */) = 0
+brk(NULL)                               = 0x564a66f35000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7fff31d158d0) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5e02b4c000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=22315, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 22315, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f5e02b46000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0I\17\357\204\3$\f\221\2039x\324\224\323\236S"..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f5e0291d000
+mprotect(0x7f5e02945000, 2023424, PROT_NONE) = 0
+mmap(0x7f5e02945000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f5e02945000
+mmap(0x7f5e02ada000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f5e02ada000
+mmap(0x7f5e02b33000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000) = 0x7f5e02b33000
+mmap(0x7f5e02b39000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f5e02b39000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5e0291a000
+arch_prctl(ARCH_SET_FS, 0x7f5e0291a740) = 0
+set_tid_address(0x7f5e0291aa10)         = 5658
+set_robust_list(0x7f5e0291aa20, 24)     = 0
+rseq(0x7f5e0291b0e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f5e02b33000, 16384, PROT_READ) = 0
+mprotect(0x564a5a9ce000, 4096, PROT_READ) = 0
+mprotect(0x7f5e02b86000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7f5e02b46000, 22315)           = 0
+pipe2([3, 4], 0)                        = 0
+pipe2([5, 6], 0)                        = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLDstrace: Process 5659 attached
+, child_tidptr=0x7f5e0291aa10) = 5659
+[pid  5659] set_robust_list(0x7f5e0291aa20, 24 <unfinished ...>
+[pid  5658] clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD <unfinished ...>
+[pid  5659] <... set_robust_list resumed>) = 0
+[pid  5659] close(4)                    = 0
+strace: Process 5660 attached
+[pid  5658] <... clone resumed>, child_tidptr=0x7f5e0291aa10) = 5660
+[pid  5659] close(5 <unfinished ...>
+[pid  5658] close(3 <unfinished ...>
+[pid  5660] set_robust_list(0x7f5e0291aa20, 24 <unfinished ...>
+[pid  5658] <... close resumed>)        = 0
+[pid  5659] <... close resumed>)        = 0
+[pid  5658] close(5 <unfinished ...>
+[pid  5660] <... set_robust_list resumed>) = 0
+[pid  5658] <... close resumed>)        = 0
+[pid  5659] dup2(3, 0 <unfinished ...>
+[pid  5658] newfstatat(1, "",  <unfinished ...>
+[pid  5660] close(3 <unfinished ...>
+[pid  5658] <... newfstatat resumed>{st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x2), ...}, AT_EMPTY_PATH) = 0
+[pid  5659] <... dup2 resumed>)         = 0
+[pid  5658] getrandom( <unfinished ...>
+[pid  5660] <... close resumed>)        = 0
+[pid  5658] <... getrandom resumed>"\x78\x99\xfa\x5c\x45\x7b\xf8\x30", 8, GRND_NONBLOCK) = 8
+[pid  5659] dup2(6, 1 <unfinished ...>
+[pid  5658] brk(NULL <unfinished ...>
+[pid  5660] close(4 <unfinished ...>
+[pid  5658] <... brk resumed>)          = 0x564a66f35000
+[pid  5659] <... dup2 resumed>)         = 1
+[pid  5658] brk(0x564a66f56000 <unfinished ...>
+[pid  5660] <... close resumed>)        = 0
+[pid  5658] <... brk resumed>)          = 0x564a66f56000
+[pid  5659] close(3 <unfinished ...>
+[pid  5658] write(1, "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \321\201\321\202\321\200\320\276\320\272\320\270 (Ctr"..., 66 <unfinished ...>
+Введите строки (Ctrl+D для завершения):
+[pid  5660] close(6 <unfinished ...>
+[pid  5658] <... write resumed>)        = 66
+[pid  5659] <... close resumed>)        = 0
+[pid  5658] newfstatat(0, "",  <unfinished ...>
+[pid  5660] <... close resumed>)        = 0
+[pid  5658] <... newfstatat resumed>{st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x2), ...}, AT_EMPTY_PATH) = 0
+[pid  5659] close(6 <unfinished ...>
+[pid  5658] read(0,  <unfinished ...>
+[pid  5660] dup2(5, 0 <unfinished ...>
+[pid  5659] <... close resumed>)        = 0
+[pid  5660] <... dup2 resumed>)         = 0
+[pid  5659] execve("./child1", ["child1"], 0x7fff31d15aa8 /* 32 vars */ <unfinished ...>
+[pid  5660] close(5)                    = 0
+[pid  5660] execve("./child2", ["child2"], 0x7fff31d15aa8 /* 32 vars */) = 0
+[pid  5659] <... execve resumed>)       = 0
+[pid  5660] brk(NULL <unfinished ...>
+[pid  5659] brk(NULL <unfinished ...>
+[pid  5660] <... brk resumed>)          = 0x559b100dd000
+[pid  5659] <... brk resumed>)          = 0x564cafd3d000
+[pid  5660] arch_prctl(0x3001 /* ARCH_??? */, 0x7fff8a7d8910 <unfinished ...>
+[pid  5659] arch_prctl(0x3001 /* ARCH_??? */, 0x7ffdd12b42f0 <unfinished ...>
+[pid  5660] <... arch_prctl resumed>)   = -1 EINVAL (Invalid argument)
+[pid  5659] <... arch_prctl resumed>)   = -1 EINVAL (Invalid argument)
+[pid  5660] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid  5659] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid  5660] <... mmap resumed>)         = 0x7fb5ce813000
+[pid  5659] <... mmap resumed>)         = 0x7f291c4b6000
+[pid  5660] access("/etc/ld.so.preload", R_OK <unfinished ...>
+[pid  5659] access("/etc/ld.so.preload", R_OK <unfinished ...>
+[pid  5660] <... access resumed>)       = -1 ENOENT (No such file or directory)
+[pid  5659] <... access resumed>)       = -1 ENOENT (No such file or directory)
+[pid  5660] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid  5659] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid  5660] <... openat resumed>)       = 3
+[pid  5659] <... openat resumed>)       = 3
+[pid  5660] newfstatat(3, "",  <unfinished ...>
+[pid  5659] newfstatat(3, "",  <unfinished ...>
+[pid  5660] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=22315, ...}, AT_EMPTY_PATH) = 0
+[pid  5659] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=22315, ...}, AT_EMPTY_PATH) = 0
+[pid  5660] mmap(NULL, 22315, PROT_READ, MAP_PRIVATE, 3, 0 <unfinished ...>
+[pid  5659] mmap(NULL, 22315, PROT_READ, MAP_PRIVATE, 3, 0 <unfinished ...>
+[pid  5660] <... mmap resumed>)         = 0x7fb5ce80d000
+[pid  5659] <... mmap resumed>)         = 0x7f291c4b0000
+[pid  5660] close(3 <unfinished ...>
+[pid  5659] close(3 <unfinished ...>
+[pid  5660] <... close resumed>)        = 0
+[pid  5659] <... close resumed>)        = 0
+[pid  5660] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid  5659] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid  5660] <... openat resumed>)       = 3
+[pid  5659] <... openat resumed>)       = 3
+[pid  5660] read(3,  <unfinished ...>
+[pid  5659] read(3,  <unfinished ...>
+[pid  5660] <... read resumed>"\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+[pid  5659] <... read resumed>"\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+[pid  5660] pread64(3,  <unfinished ...>
+[pid  5659] pread64(3,  <unfinished ...>
+[pid  5660] <... pread64 resumed>"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  5659] <... pread64 resumed>"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  5660] pread64(3,  <unfinished ...>
+[pid  5659] pread64(3,  <unfinished ...>
+[pid  5660] <... pread64 resumed>"\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+[pid  5659] <... pread64 resumed>"\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+[pid  5660] pread64(3,  <unfinished ...>
+[pid  5659] pread64(3,  <unfinished ...>
+[pid  5660] <... pread64 resumed>"\4\0\0\0\24\0\0\0\3\0\0\0GNU\0I\17\357\204\3$\f\221\2039x\324\224\323\236S"..., 68, 896) = 68
+[pid  5659] <... pread64 resumed>"\4\0\0\0\24\0\0\0\3\0\0\0GNU\0I\17\357\204\3$\f\221\2039x\324\224\323\236S"..., 68, 896) = 68
+[pid  5660] newfstatat(3, "",  <unfinished ...>
+[pid  5659] newfstatat(3, "",  <unfinished ...>
+[pid  5660] <... newfstatat resumed>{st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+[pid  5659] <... newfstatat resumed>{st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+[pid  5660] pread64(3,  <unfinished ...>
+[pid  5659] pread64(3,  <unfinished ...>
+[pid  5660] <... pread64 resumed>"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  5659] <... pread64 resumed>"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  5660] mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0 <unfinished ...>
+[pid  5659] mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0 <unfinished ...>
+[pid  5660] <... mmap resumed>)         = 0x7fb5ce5e4000
+[pid  5659] <... mmap resumed>)         = 0x7f291c287000
+[pid  5660] mprotect(0x7fb5ce60c000, 2023424, PROT_NONE <unfinished ...>
+[pid  5659] mprotect(0x7f291c2af000, 2023424, PROT_NONE <unfinished ...>
+[pid  5660] <... mprotect resumed>)     = 0
+[pid  5659] <... mprotect resumed>)     = 0
+[pid  5660] mmap(0x7fb5ce60c000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000 <unfinished ...>
+[pid  5659] mmap(0x7f291c2af000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000 <unfinished ...>
+[pid  5660] <... mmap resumed>)         = 0x7fb5ce60c000
+[pid  5659] <... mmap resumed>)         = 0x7f291c2af000
+[pid  5660] mmap(0x7fb5ce7a1000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000 <unfinished ...>
+[pid  5659] mmap(0x7f291c444000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000 <unfinished ...>
+[pid  5660] <... mmap resumed>)         = 0x7fb5ce7a1000
+[pid  5659] <... mmap resumed>)         = 0x7f291c444000
+[pid  5660] mmap(0x7fb5ce7fa000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000 <unfinished ...>
+[pid  5659] mmap(0x7f291c49d000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000 <unfinished ...>
+[pid  5660] <... mmap resumed>)         = 0x7fb5ce7fa000
+[pid  5659] <... mmap resumed>)         = 0x7f291c49d000
+[pid  5660] mmap(0x7fb5ce800000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fb5ce800000
+[pid  5659] mmap(0x7f291c4a3000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid  5660] close(3 <unfinished ...>
+[pid  5659] <... mmap resumed>)         = 0x7f291c4a3000
+[pid  5660] <... close resumed>)        = 0
+[pid  5659] close(3 <unfinished ...>
+[pid  5660] mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid  5659] <... close resumed>)        = 0
+[pid  5660] <... mmap resumed>)         = 0x7fb5ce5e1000
+[pid  5659] mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid  5660] arch_prctl(ARCH_SET_FS, 0x7fb5ce5e1740 <unfinished ...>
+[pid  5659] <... mmap resumed>)         = 0x7f291c284000
+[pid  5660] <... arch_prctl resumed>)   = 0
+[pid  5659] arch_prctl(ARCH_SET_FS, 0x7f291c284740 <unfinished ...>
+[pid  5660] set_tid_address(0x7fb5ce5e1a10 <unfinished ...>
+[pid  5659] <... arch_prctl resumed>)   = 0
+[pid  5660] <... set_tid_address resumed>) = 5660
+[pid  5659] set_tid_address(0x7f291c284a10 <unfinished ...>
+[pid  5660] set_robust_list(0x7fb5ce5e1a20, 24 <unfinished ...>
+[pid  5659] <... set_tid_address resumed>) = 5659
+[pid  5660] <... set_robust_list resumed>) = 0
+[pid  5659] set_robust_list(0x7f291c284a20, 24 <unfinished ...>
+[pid  5660] rseq(0x7fb5ce5e20e0, 0x20, 0, 0x53053053 <unfinished ...>
+[pid  5659] <... set_robust_list resumed>) = 0
+[pid  5660] <... rseq resumed>)         = 0
+[pid  5659] rseq(0x7f291c2850e0, 0x20, 0, 0x53053053) = 0
+[pid  5660] mprotect(0x7fb5ce7fa000, 16384, PROT_READ) = 0
+[pid  5659] mprotect(0x7f291c49d000, 16384, PROT_READ <unfinished ...>
+[pid  5660] mprotect(0x559ae1eaf000, 4096, PROT_READ <unfinished ...>
+[pid  5659] <... mprotect resumed>)     = 0
+[pid  5660] <... mprotect resumed>)     = 0
+[pid  5659] mprotect(0x564c87e7e000, 4096, PROT_READ <unfinished ...>
+[pid  5660] mprotect(0x7fb5ce84d000, 8192, PROT_READ <unfinished ...>
+[pid  5659] <... mprotect resumed>)     = 0
+[pid  5660] <... mprotect resumed>)     = 0
+[pid  5659] mprotect(0x7f291c4f0000, 8192, PROT_READ <unfinished ...>
+[pid  5660] prlimit64(0, RLIMIT_STACK, NULL,  <unfinished ...>
+[pid  5659] <... mprotect resumed>)     = 0
+[pid  5660] <... prlimit64 resumed>{rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+[pid  5659] prlimit64(0, RLIMIT_STACK, NULL,  <unfinished ...>
+[pid  5660] munmap(0x7fb5ce80d000, 22315 <unfinished ...>
+[pid  5659] <... prlimit64 resumed>{rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+[pid  5660] <... munmap resumed>)       = 0
+[pid  5659] munmap(0x7f291c4b0000, 22315 <unfinished ...>
+[pid  5660] newfstatat(0, "",  <unfinished ...>
+[pid  5659] <... munmap resumed>)       = 0
+[pid  5660] <... newfstatat resumed>{st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+[pid  5660] getrandom( <unfinished ...>
+[pid  5659] newfstatat(0, "",  <unfinished ...>
+[pid  5660] <... getrandom resumed>"\x95\x2d\x25\x37\xbc\x6d\xf2\x31", 8, GRND_NONBLOCK) = 8
+[pid  5659] <... newfstatat resumed>{st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+[pid  5660] brk(NULL <unfinished ...>
+[pid  5659] getrandom( <unfinished ...>
+[pid  5660] <... brk resumed>)          = 0x559b100dd000
+[pid  5659] <... getrandom resumed>"\x86\xed\xa9\x13\x3d\xc8\x3e\xbd", 8, GRND_NONBLOCK) = 8
+[pid  5660] brk(0x559b100fe000 <unfinished ...>
+[pid  5659] brk(NULL <unfinished ...>
+[pid  5660] <... brk resumed>)          = 0x559b100fe000
+[pid  5659] <... brk resumed>)          = 0x564cafd3d000
+[pid  5660] read(0,  <unfinished ...>
+[pid  5659] brk(0x564cafd5e000)         = 0x564cafd5e000
+[pid  5659] read(0,  <unfinished ...>
+[pid  5658] <... read resumed>0x564a66f356b0, 1024) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+[pid  5660] <... read resumed>0x559b100dd2a0, 4096) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+[pid  5659] <... read resumed>0x564cafd3d2a0, 4096) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+[pid  5658] --- SIGWINCH {si_signo=SIGWINCH, si_code=SI_KERNEL} ---
+[pid  5660] --- SIGWINCH {si_signo=SIGWINCH, si_code=SI_KERNEL} ---
+[pid  5658] read(0,  <unfinished ...>
+[pid  5659] --- SIGWINCH {si_signo=SIGWINCH, si_code=SI_KERNEL} ---
+[pid  5660] read(0,  <unfinished ...>
+[pid  5659] read(0,  <unfinished ...>
+[pid  5658] <... read resumed>0x564a66f356b0, 1024) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+[pid  5660] <... read resumed>0x559b100dd2a0, 4096) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+[pid  5659] <... read resumed>0x564cafd3d2a0, 4096) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+[pid  5658] --- SIGWINCH {si_signo=SIGWINCH, si_code=SI_KERNEL} ---
+[pid  5660] --- SIGWINCH {si_signo=SIGWINCH, si_code=SI_KERNEL} ---
+[pid  5658] read(0,  <unfinished ...>
+[pid  5659] --- SIGWINCH {si_signo=SIGWINCH, si_code=SI_KERNEL} ---
+[pid  5660] read(0,  <unfinished ...>
+[pid  5659] read(0, AAA  HHH   FF VV
+ <unfinished ...>
+[pid  5658] <... read resumed>"AAA  HHH   FF VV\n", 1024) = 17
+[pid  5658] write(4, "AAA  HHH   FF VV\n", 17) = 17
+[pid  5659] <... read resumed>"AAA  HHH   FF VV\n", 4096) = 17
+[pid  5658] read(0,  <unfinished ...>
+[pid  5659] newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+[pid  5659] read(0, gg hh 
+ <unfinished ...>
+[pid  5658] <... read resumed>"gg hh \n", 1024) = 7
+[pid  5658] write(4, "gg hh \n", 7)     = 7
+[pid  5659] <... read resumed>"gg hh \n", 4096) = 7
+[pid  5658] read(0,  <unfinished ...>
+[pid  5659] read(0,  <unfinished ...>
+[pid  5658] <... read resumed>"", 1024) = 0
+[pid  5658] close(4)                    = 0
+[pid  5659] <... read resumed>"", 4096) = 0
+[pid  5658] wait4(-1,  <unfinished ...>
+[pid  5659] write(1, "aaa  hhh   ff vv\ngg hh \n", 24) = 24
+[pid  5660] <... read resumed>"aaa  hhh   ff vv\ngg hh \n", 4096) = 24
+[pid  5659] exit_group(0 <unfinished ...>
+[pid  5660] newfstatat(1, "",  <unfinished ...>
+[pid  5659] <... exit_group resumed>)   = ?
+[pid  5660] <... newfstatat resumed>{st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x2), ...}, AT_EMPTY_PATH) = 0
+[pid  5660] write(1, "aaa hhh ff vv\n", 14aaa hhh ff vv
+) = 14
+[pid  5660] write(1, "gg hh \n", 7gg hh 
+)     = 7
+[pid  5660] read(0,  <unfinished ...>
+[pid  5659] +++ exited with 0 +++
+[pid  5658] <... wait4 resumed>NULL, 0, NULL) = 5659
+[pid  5658] --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=5659, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+[pid  5658] wait4(-1, ^CNULL, 0, NULL)    = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+strace: Process 5658 detached
+strace: Process 5660 detached
