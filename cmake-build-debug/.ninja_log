@@ -1,7 +1,0 @@
-# ninja log v5
-388	433	1739388708129111890	os_labs	690cd37ac2cc33c4
-0	167	1739444981884562125	CMakeFiles/os_labs.dir/lab1/src/child1.c.o	e89d589952cf17ec
-0	62	1739447247869479333	build.ninja	340662251f1c87b5
-0	386	1739388708080181096	CMakeFiles/os_labs.dir/lab1/src/test.cpp.o	f16458edaff0452e
-0	167	1739444981884562792	CMakeFiles/os_labs.dir/lab1/src/child2.c.o	3a21a67dc6fd1b8
-0	167	1739444981884602749	CMakeFiles/os_labs.dir/lab1/src/parent.c.o	b155c0b6cc6883b1
