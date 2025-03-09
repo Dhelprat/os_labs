@@ -10,5 +10,4 @@ add_executable(os_labs
         lab2/src/main.cpp
         lab4/src/program2.cpp
         lab4/src/program1.cpp
-        lab4/src/library2.cpp
-        lab4/src/library1.cpp)
+)

@@ -1,6 +1,4 @@
-#include "library1.h"
-
-int PrimeCount(int A, int B) {
+extern "C" int PrimeCount(int A, int B) {
     int count = 0;
     for (int i = A; i <= B; i++) {
         bool isPrime = true;
@@ -14,8 +12,4 @@ int PrimeCount(int A, int B) {
         if (isPrime) count++;
     }
     return count;
-}
-
-float Square(float A, float B) {
-    return A * B;
 }

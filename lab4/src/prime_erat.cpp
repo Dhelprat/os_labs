@@ -1,7 +1,6 @@
-#include "library1.h"
 #include <vector>
 
-int PrimeCount(int A, int B) {
+extern "C" int PrimeCount(int A, int B) {
     if (B < 2) return 0;
 
     std::vector<bool> isPrime(B + 1, true);
@@ -20,8 +19,4 @@ int PrimeCount(int A, int B) {
         if (isPrime[i]) count++;
     }
     return count;
-}
-
-float Square(float A, float B) {
-    return 0.5f * A * B;
 }
