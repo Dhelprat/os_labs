@@ -1,0 +1,6 @@
+{
+  "name": "MAI OOP Labs Container",
+  "dockerFile": "Dockerfile",
+  "context": ".",
+  "appPort": []
+}
