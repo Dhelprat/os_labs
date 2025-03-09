@@ -1,10 +1,22 @@
+# Используем официальный образ Ubuntu 22.04
 FROM ubuntu:22.04
 
-# Обновление пакетов и установка зависимостей
+# Установка необходимых пакетов
 RUN apt-get update && \
-    apt-get install -y g++ make strace && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y \
+    build-essential \
+    g++ \
+    cmake \
+    strace \
+    gdb \
+    git \
+    && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+# Устанавливаем рабочую директорию
+WORKDIR /workspace
+
+# Копируем исходный код в контейнер
 COPY . .
+
+# Команда по умолчанию (можно изменить)
+CMD ["bash"]

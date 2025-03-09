@@ -1,0 +1,84 @@
+execve("./program1", ["./program1"], 0xfffff6efe7d0 /* 11 vars */) = 0
+brk(NULL)                               = 0xaaaaf9a31000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffab85b000
+faccessat(AT_FDCWD, "/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=12067, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 12067, PROT_READ, MAP_PRIVATE, 3, 0) = 0xffffab858000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2190752, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 2332704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffab5ed000
+mmap(0xffffab5f0000, 2267168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffab5f0000
+munmap(0xffffab5ed000, 12288)           = 0
+munmap(0xffffab81a000, 51232)           = 0
+mprotect(0xffffab7fa000, 61440, PROT_NONE) = 0
+mmap(0xffffab809000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x209000) = 0xffffab809000
+mmap(0xffffab817000, 10272, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffab817000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\340u\2\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1637400, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 1805928, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffab437000
+mmap(0xffffab440000, 1740392, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffab440000
+munmap(0xffffab437000, 36864)           = 0
+munmap(0xffffab5e9000, 28264)           = 0
+mprotect(0xffffab5c8000, 61440, PROT_NONE) = 0
+mmap(0xffffab5d7000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x187000) = 0xffffab5d7000
+mmap(0xffffab5dd000, 48744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffab5dd000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=551064, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 680048, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffab399000
+mmap(0xffffab3a0000, 614512, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffab3a0000
+munmap(0xffffab399000, 28672)           = 0
+munmap(0xffffab437000, 32880)           = 0
+mprotect(0xffffab426000, 61440, PROT_NONE) = 0
+mmap(0xffffab435000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x85000) = 0xffffab435000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=84296, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 213704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffab36b000
+mmap(0xffffab370000, 148168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffab370000
+munmap(0xffffab36b000, 20480)           = 0
+munmap(0xffffab395000, 41672)           = 0
+mprotect(0xffffab384000, 61440, PROT_NONE) = 0
+mmap(0xffffab393000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13000) = 0xffffab393000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffab856000
+set_tid_address(0xffffab856af0)         = 66
+set_robust_list(0xffffab856b00, 24)     = 0
+rseq(0xffffab8571c0, 0x20, 0, 0xd428bc00) = 0
+mprotect(0xffffab5d7000, 16384, PROT_READ) = 0
+mprotect(0xffffab393000, 4096, PROT_READ) = 0
+mprotect(0xffffab435000, 4096, PROT_READ) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffab854000
+mprotect(0xffffab809000, 45056, PROT_READ) = 0
+mprotect(0xaaaadc761000, 4096, PROT_READ) = 0
+mprotect(0xffffab861000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0xffffab858000, 12067)           = 0
+getrandom("\x3b\xdd\x3b\x7b\xd2\x69\xaf\x09", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0xaaaaf9a31000
+brk(0xaaaaf9a52000)                     = 0xaaaaf9a52000
+futex(0xffffab8177a4, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+write(1, "Enter a command (1 or 2): ", 26) = 26
+newfstatat(0, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+read(0, "1\n", 1024)                    = 2
+write(1, "Enter A and B to count prime num"..., 38) = 38
+read(0, "1 10\n", 1024)                 = 5
+write(1, "Number of primes: 4\n", 20)   = 20
+write(1, "Enter a command (1 or 2): ", 26) = 26
+read(0, "2\n", 1024)                    = 2
+write(1, "Enter sides A and B: ", 21)   = 21
+read(0, "5 20\n", 1024)                 = 5
+write(1, "Area: 100\n", 10)             = 10
+write(1, "Enter a command (1 or 2): ", 26) = 26
+read(0, "egpjeprg\n", 1024)             = 9
+lseek(0, -9, SEEK_CUR)                  = -1 ESPIPE (Illegal seek)
+exit_group(0)                           = ?
++++ exited with 0 +++

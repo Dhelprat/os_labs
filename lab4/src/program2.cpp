@@ -20,8 +20,9 @@ int main() {
 
     int choice;
     while (true) {
-        std::cout << "Enter a command (0, 1, or 2): ";
+        std::cout << "Enter a command (0, 1, or 2) or 4 for exit: ";
         std::cin >> choice;
+        std::cout << choice;
 
         if (choice == 0) {
             dlclose(hLib);
@@ -44,7 +45,7 @@ int main() {
             std::cout << "Enter sides A and B: ";
             std::cin >> A >> B;
             std::cout << "Area: " << Square(A, B) << std::endl;
-        } else {
+        } else if (choice == 4) {
             break;
         }
     }

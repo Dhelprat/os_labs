@@ -1,6 +1,13 @@
 {
-  "name": "MAI OOP Labs Container",
+  "name": "C++ Dev Container",
   "dockerFile": "Dockerfile",
-  "context": ".",
-  "appPort": []
+  "context": "..",
+  "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],  // Для strace и gdb
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ms-vscode.cpptools"  // Расширение для C++ (если используете VSCode)
+  ],
+  "remoteUser": "root"  // Пользователь по умолчанию
 }
