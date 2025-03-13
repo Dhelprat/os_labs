@@ -1,4 +1,4 @@
-all: program1 program2 liblibrary1.so liblibrary2.so clean
+all: program1 program2 liblibrary1.so liblibrary2.so
 
 # Program 1 (статическая линковка)
 program1: program1.o prime_naive.o area_rect.o
@@ -33,6 +33,5 @@ prime_erat.o: prime_erat.cpp
 area_triangle.o: area_triangle.cpp
 	g++ -c -fPIC area_triangle.cpp
 
-# Clean
 clean:
-	rm -f *.o
+	rm -f program1 program2 *.o *.so
